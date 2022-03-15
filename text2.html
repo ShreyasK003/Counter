@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.css">
+
+    <style>
+        .dynamic-txts li::after{
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: #082032;
+            border-left: 2px solid black;
+            left: 0;
+            animation: typing 3s steps(10) infinite;
+        }
+        @keyframes typing {
+                40%, 60%{
+                    left: calc(100% + 5px);
+                }
+                100%{
+                    left:0;
+                }
+            }
+
+            .dynamic-txts li{
+                top:0;
+                animation: slide 12s steps(4) infinite; 
+            }
+            @media only screen and (max-width: 600px) {
+                .dynamic-txts{
+                    height: 52.5px;
+                }
+                @keyframes slide{
+                    100%{
+                        top:-165px;
+                    }
+                }
+            }
+            @media only screen and (min-width: 600px) {
+                .dynamic-txts{
+                    height: 50px;
+                }
+                @keyframes slide{
+                    100%{
+                        top:-240px;
+                    }
+                }
+            }
+    </style>
+
+</head>
+<body class="d-flex justify-content-center align-items-center" style="height:100vh; background-color: #082032">
+    <div class="wrapper d-flex">
+        <div class="text fs-1 d-flex align-items-start text-light">I'm a</div> 
+        <ul class="dynamic-txts fs-1 list-unstyled ms-3 overflow-hidden">
+            <li class="position-relative  text-danger">Developer</li>
+            <li class="position-relative  text-danger">Youtuber</li>
+            <li class="position-relative  text-danger">Designer</li>
+            <li class="position-relative  text-danger">Freelanner</li>
+        </ul>
+    </div>
+</body>
+</html>
